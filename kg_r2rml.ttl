@@ -2,27 +2,27 @@
 
 @prefix rr: <http://www.w3.org/ns/r2rml#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
-@prefix crunchbase: <http://www.openlinksw.com/schemas/crunchbase#>.
+@prefix cb: <http://www.openlinksw.com/schemas/crunchbase#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix void: <http://rdfs.org/ns/void#> .
 @prefix scovo: <http://purl.org/NET/scovo#> .
 @prefix aowl: <http://bblfish.net/work/atom-owl/2006-06-06/> .
 
 <#TriplesMapacquisitions> a rr:TriplesMap; rr:logicalTable [ rr:tableSchema "crunchbase" ; rr:tableOwner "demo" ; rr:tableName "acquisitions" ]; 
-rr:subjectMap [ rr:termType rr:IRI  ; rr:template "{cb_url}#this"; rr:class crunchbase:Acquisition; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];
+rr:subjectMap [ rr:termType rr:IRI  ; rr:template "{cb_url}#this"; rr:class cb:Acquisition; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMap [ rr:column "name" ]; ] ;
-rr:predicateObjectMap [ rr:predicateMap [ rr:constant crunchbase:hasRank ] ; rr:objectMap [ rr:column "rank" ]; ] ;
-rr:predicateObjectMap [ rr:predicateMap [ rr:constant crunchbase:createdAt ] ; rr:objectMap [ rr:column "created_at" ]; ] ;
-rr:predicateObjectMap [ rr:predicateMap [ rr:constant crunchbase:updatedAt ] ; rr:objectMap [ rr:column "updated_at" ]; ] ;
-rr:predicateObjectMap [ rr:predicateMap [ rr:constant crunchbase:hasAcquiree ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "{acquiree_cb_url}" ]; ] ;
-rr:predicateObjectMap [ rr:predicateMap [ rr:constant crunchbase:hasAcquirer ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "{acquirer_cb_url}" ]; ] ;
-rr:predicateObjectMap [ rr:predicateMap [ rr:constant crunchbase:acquisition_type ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://www.openlinksw.com/schemas/crunchbase#{acquisition_type}" ]; ] ;
-rr:predicateObjectMap [ rr:predicateMap [ rr:constant crunchbase:hasAcquisitionDate ] ; rr:objectMap [ rr:column "acquired_on" ]; ] ;
-rr:predicateObjectMap [ rr:predicateMap [ rr:constant crunchbase:hasPriceAmount ] ; rr:objectMap [ rr:column "price_usd" ]; ] ;
-rr:predicateObjectMap [ rr:predicateMap [ rr:constant crunchbase:hasPriceCurrencyCode ] ; rr:objectMap [ rr:column "price_currency_code" ]; ] .
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasRank ] ; rr:objectMap [ rr:column "rank" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:createdAt ] ; rr:objectMap [ rr:column "created_at" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:updatedAt ] ; rr:objectMap [ rr:column "updated_at" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasAcquiree ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "{acquiree_cb_url}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasAcquirer ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "{acquirer_cb_url}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:acquisition_type ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://www.openlinksw.com/schemas/crunchbase#{acquisition_type}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasAcquisitionDate ] ; rr:objectMap [ rr:column "acquired_on" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasPriceAmount ] ; rr:objectMap [ rr:column "price_usd" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasPriceCurrencyCode ] ; rr:objectMap [ rr:column "price_currency_code" ]; ] .
 
 <#TriplesMapacquisitions_company> a rr:TriplesMap; rr:logicalTable [ rr:tableSchema "crunchbase" ; rr:tableOwner "demo" ; rr:tableName "acquisitions" ]; 
-rr:subjectMap [ rr:termType rr:IRI  ; rr:template "{acquirer_cb_url}#this"; rr:class crunchbase:Organization; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];
-rr:predicateObjectMap [ rr:predicateMap [ rr:constant crunchbase:hasAcquisition] ; rr:objectMap [ rr:termType rr:IRI; rr:template "{acquiree_cb_url}" ]; ] .
+rr:subjectMap [ rr:termType rr:IRI  ; rr:template "{acquirer_cb_url}#this"; rr:class cb:Organization; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasAcquisition] ; rr:objectMap [ rr:termType rr:IRI; rr:template "{acquiree_cb_url}" ]; ] .
 
 ### Turtle End ###

@@ -2,7 +2,7 @@
 
 @prefix rr: <http://www.w3.org/ns/r2rml#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
-@Prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
 @prefix cb: <http://www.openlinksw.com/schemas/crunchbase#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix void: <http://rdfs.org/ns/void#> .
@@ -27,13 +27,13 @@ rr:subjectMap [ rr:termType rr:IRI  ; rr:template "{acquirer_cb_url}#this"; rr:c
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasAcquisition] ; rr:objectMap [ rr:termType rr:IRI; rr:template "{acquiree_cb_url}" ]; ] .
 
 <#TriplesMapcategory_groups> a rr:TriplesMap; rr:logicalTable [ rr:tableSchema "crunchbase" ; rr:tableOwner "demo" ; rr:tableName "category_groups" ]; 
-rr:subjectMap [ rr:termType rr:IRI  ; rr:template "https://crunchbase.com/category{permalink}#this"; rr:class crunchbase:Category; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];
-rr:predicateObjectMap [ rr:predicateMap [ rr:constant crunchbase:uuid ] ; rr:objectMap [ rr:column "uuid" ]; ] ;
+rr:subjectMap [ rr:termType rr:IRI  ; rr:template "https://crunchbase.com/category{permalink}#this"; rr:class cb:Category; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:uuid ] ; rr:objectMap [ rr:column "uuid" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMap [ rr:column "name" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant owl:sameAs ] ; rr:objectMap [ rr:column "cb_url" ]; ] ;
-rr:predicateObjectMap [ rr:predicateMap [ rr:constant crunchbase:hasRank ] ; rr:objectMap [ rr:column "rank" ]; ] ;
-rr:predicateObjectMap [ rr:predicateMap [ rr:constant crunchbase:createdAt ] ; rr:objectMap [ rr:column "created_at" ]; ] ;
-rr:predicateObjectMap [ rr:predicateMap [ rr:constant crunchbase:updatedAt ] ; rr:objectMap [ rr:column "updated_at" ]; ] ;
-rr:predicateObjectMap [ rr:predicateMap [ rr:constant crunchbase:hasCategoryGroupsList ] ; rr:objectMap [ rr:termType rr:IRI; rr:template  "https://crunchbase.com/category_group/{category_groups_list}#this" ]; ] .
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasRank ] ; rr:objectMap [ rr:column "rank" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:createdAt ] ; rr:objectMap [ rr:column "created_at" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:updatedAt ] ; rr:objectMap [ rr:column "updated_at" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasCategoryGroupsList ] ; rr:objectMap [ rr:termType rr:IRI; rr:template  "https://crunchbase.com/category_group/{category_groups_list}#this" ]; ] .
 
 ### Turtle End ###

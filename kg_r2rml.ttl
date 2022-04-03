@@ -2,7 +2,7 @@
 
 @prefix rr: <http://www.w3.org/ns/r2rml#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
-@prefix crunchbase: <http://www.openlinksw.com/schemas/crunchbase#>
+@prefix crunchbase: <http://www.openlinksw.com/schemas/crunchbase#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix void: <http://rdfs.org/ns/void#> .
 @prefix scovo: <http://purl.org/NET/scovo#> .

@@ -1,5 +1,4 @@
 ### Turtle Start ###
-
 @prefix rr: <http://www.w3.org/ns/r2rml#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix owl: <http://www.w3.org/2002/07/owl#>.
@@ -51,4 +50,45 @@ rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:subject ] ; rr:objectMa
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:degreeStartedOn ] ; rr:objectMap [ rr:column "started_on" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:degreeCompletedOn ] ; rr:objectMap [ rr:column "completed_on" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:degreIsCompleted ] ; rr:objectMap [ rr:column "is_completed" ]; ] .
+
+<#TriplesMaporganizations> a rr:TriplesMap; rr:logicalTable [ rr:tableSchema "crunchbase" ; rr:tableOwner "demo" ; rr:tableName "organizations" ]; 
+rr:subjectMap [ rr:termType rr:IRI  ; rr:template "{cb_url}#this"; rr:class cb:Organization; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMap [ rr:column "name" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasRank ] ; rr:objectMap [ rr:column "rank" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:createdAt ] ; rr:objectMap [ rr:column "created_at" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:updatedAt ] ; rr:objectMap [ rr:column "updated_at" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:ahsLegalName ] ; rr:objectMap [ rr:column "legal_name" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasRoles ] ; rr:objectMap [ rr:column "roles" ]; ] ;
+#rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:domain ] ; rr:objectMap [ rr:column "domain" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:homepage_url ] ; rr:objectMap [ rr:termType rr:Literal; rr:column "homepage_url" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:countryCode ] ; rr:objectMap [ rr:column "country_code" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:stateCode ] ; rr:objectMap [ rr:column "state_code" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:region ] ; rr:objectMap [ rr:column "region" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:city ] ; rr:objectMap [ rr:column "city" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:address ] ; rr:objectMap [ rr:column "address" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:postal_code ] ; rr:objectMap [ rr:column "postal_code" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:status ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://www.openlinksw.com/schemas/crunchbase#{status}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:comment] ; rr:objectMap [ rr:column "short_description" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:category_list ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://www.openlinksw.com/schemas/crunchbase#{category_list}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:category_groups_list ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://www.openlinksw.com/schemas/crunchbase#{category_groups_list}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasTotalFundingRounds ] ; rr:objectMap [ rr:column "num_funding_rounds" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasTotalMoneyRaised ] ; rr:objectMap [ rr:column "total_funding_usd" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasValuationCurrencyCode ] ; rr:objectMap [ rr:column "total_funding_currency_code" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:wasFoundedOn ] ; rr:objectMap [ rr:column "founded_on" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasLastFundingDate ] ; rr:objectMap [ rr:column "last_funding_on" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:closed_on ] ; rr:objectMap [ rr:column "closed_on" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasEmployeeCount ] ; rr:objectMap [ rr:column "employee_count" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:email ] ; rr:objectMap [ rr:column "email" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:phone ] ; rr:objectMap [ rr:column "phone" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:facebook_url ] ; rr:objectMap [ rr:termType rr:IRI; rr:column "facebook_url" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:linkedin_url ] ; rr:objectMap [ rr:termType rr:IRI; rr:column "linkedin_url" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:twitter_url ] ; rr:objectMap [ rr:termType rr:IRI; rr:column "twitter_url" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:logo_url ] ; rr:objectMap [ rr:column "logo_url" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:alias1 ] ; rr:objectMap [ rr:column "alias1" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:alias2 ] ; rr:objectMap [ rr:column "alias2" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:alias3 ] ; rr:objectMap [ rr:column "alias3" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdf:type ] ; rr:objectMap [ rr:termType rr:Literal; rr:template "http://www.openlinksw.com/schemas/crunchbase#{primary_role}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasTotalExits ] ; rr:objectMap [ rr:column "num_exits" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasRevenueRange ] ; rr:objectMap [ rr:column "revenue_range" ]; ] .
+
 ### Turtle End ###

@@ -27,7 +27,7 @@ rr:subjectMap [ rr:termType rr:IRI  ; rr:template "{acquirer_cb_url}#this"; rr:c
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasAcquisition] ; rr:objectMap [ rr:termType rr:IRI; rr:template "{acquiree_cb_url}" ]; ] .
 
 <#TriplesMapcategory_groups> a rr:TriplesMap; rr:logicalTable [ rr:tableSchema "crunchbase" ; rr:tableOwner "demo" ; rr:tableName "category_groups" ]; 
-rr:subjectMap [ rr:termType rr:IRI  ; rr:template "https://crunchbase.com/category{permalink}#this"; rr:class cb:Category; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];
+rr:subjectMap [ rr:termType rr:IRI  ; rr:template "https://crunchbase.com/category/{permalink}#this"; rr:class cb:Category; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:uuid ] ; rr:objectMap [ rr:column "uuid" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMap [ rr:column "name" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant owl:sameAs ] ; rr:objectMap [ rr:column "cb_url" ]; ] ;

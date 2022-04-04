@@ -22,7 +22,7 @@ CREATE PROCEDURE table_check(IN tbl VARCHAR){
 DROP PROCEDURE openlink_crunchbase_demo_gen;
 CREATE PROCEDURE openlink_crunchbase_demo_gen(){
     DECLARE files ANY;
-    DECLARE cb_dir, loc, resp, tb_name, csv_name VARCHAR;
+    DECLARE cb_dir, loc, resp, tb_name, csv_name, r2rml_doc VARCHAR;
     
     -- Create Directory
     cb_dir := 'openlink_crunchbase_kb_demo';
@@ -56,7 +56,10 @@ CREATE PROCEDURE openlink_crunchbase_demo_gen(){
             exec(sprintf('DROP TABLE %s',tb_name));
         };
         ATTACH_FROM_CSV(tb_name,csv_name,',','\n',null,1,vector(1));
-    }
+    };
+
+    r2rml_doc := 'https://raw.githubusercontent.com/danielhmills/virtuoso_crunchbase_kg_demo/main/kg_r2rml.ttl';
+    STRING_TO_FILE(sprintf('%s/kg_r2rml.ttl',cb_dir), http_get(r2rml_doc), 0);
     RETURN 1;
 };
 

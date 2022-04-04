@@ -36,4 +36,19 @@ rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:createdAt ] ; rr:object
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:updatedAt ] ; rr:objectMap [ rr:column "updated_at" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasCategoryGroupsList ] ; rr:objectMap [ rr:termType rr:IRI; rr:template  "https://crunchbase.com/category_group/{category_groups_list}#this" ]; ] .
 
+<#TriplesMapdegrees> a rr:TriplesMap; rr:logicalTable [ rr:tableSchema "crunchbase" ; rr:tableOwner "demo" ; rr:tableName "degrees" ]; 
+rr:subjectMap [ rr:termType rr:IRI  ; rr:template "https://crunchbase.com/degree/{permalink}#this"; rr:class cb:Degree; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMap [ rr:column "name" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasRank ] ; rr:objectMap [ rr:column "rank" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:createdAt ] ; rr:objectMap [ rr:column "created_at" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:updatedAt ] ; rr:objectMap [ rr:column "updated_at" ]; ] ;
+#rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:person_uuid ] ; rr:objectMap [ rr:column "person_uuid" ]; ] ;
+#rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:person_name ] ; rr:objectMap [ rr:column "person_name" ]; ] ;
+#rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:institution_uuid ] ; rr:objectMap [ rr:column "institution_uuid" ]; ] ;
+#rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:institution_name ] ; rr:objectMap [ rr:column "institution_name" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:degree_type ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://www.openlinksw.com/schemas/crunchbase#{degree_type}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:subject ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://www.openlinksw.com/schemas/crunchbase#{subject}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:degreeStartedOn ] ; rr:objectMap [ rr:column "started_on" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:degreeCompletedOn ] ; rr:objectMap [ rr:column "completed_on" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:degreIsCompleted ] ; rr:objectMap [ rr:column "is_completed" ]; ] .
 ### Turtle End ###

@@ -28,8 +28,8 @@ rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasAcquireeName ] ; rr:
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant schema:mainEntityOfPage ] ; rr:objectMap [ rr:column "acquiree_cb_url" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasAcquireeCountryCode ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "https://demo.openlinksw.com/crunchbase/country/acquiree_country_code}#this" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasAcquireeStateCode ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "https://demo.openlinksw.com/crunchbase/state/acquiree_state_code}#this" ]; ] ;
-rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasAcquireeRegion ] ; [ rr:termType rr:IRI; rr:template "https://demo.openlinksw.com/crunchbase/region/acquiree_region}#this" ]; ] ;
-rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasAcquireeCity ] ; [ rr:termType rr:IRI; rr:template "https://demo.openlinksw.com/crunchbase/region/acquiree_city}#this" ]; ] .
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasAcquireeRegion ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "https://demo.openlinksw.com/crunchbase/region/acquiree_region}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasAcquireeCity ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "https://demo.openlinksw.com/crunchbase/region/acquiree_city}#this" ]; ] .
 
 <#TriplesMapAcquirer> a rr:TriplesMap; rr:logicalTable [ rr:tableSchema "crunchbase" ; rr:tableOwner "demo" ; rr:tableName "acquisitions" ]; 
 rr:subjectMap [ rr:termType rr:IRI  ; rr:template "https://demo.openlinksw.com/crunchbase/organization/{acquirer_uuid}#this"; rr:class cb:Organization; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];
@@ -37,8 +37,8 @@ rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasAcquireeName ] ; rr:
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant schema:mainEntityOfPage ] ; rr:objectMap [ rr:column "acquiree_cb_url" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasAcquireeCountryCode ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "https://demo.openlinksw.com/crunchbase/country/acquirer_country_code}#this" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasAcquireeStateCode ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "https://demo.openlinksw.com/crunchbase/state/acquirer_state_code}#this" ]; ] ;
-rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasAcquireeRegion ] ; [ rr:termType rr:IRI; rr:template "https://demo.openlinksw.com/crunchbase/region/acquirer_region}#this" ]; ] ;
-rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasAcquireeCity ] ; [ rr:termType rr:IRI; rr:template "https://demo.openlinksw.com/crunchbase/region/acquirer_city}#this" ]; ] .
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasAcquireeRegion ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "https://demo.openlinksw.com/crunchbase/region/acquirer_region}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasAcquireeCity ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "https://demo.openlinksw.com/crunchbase/region/acquirer_city}#this" ]; ] .
 
 <#TriplesMapcategory_groups> a rr:TriplesMap; rr:logicalTable [ rr:tableSchema "crunchbase" ; rr:tableOwner "demo" ; rr:tableName "category_groups" ]; 
 rr:subjectMap [ rr:termType rr:IRI  ; rr:template "https://demo.openlinksw.com/crunchbase/category/{permalink}#this"; rr:class cb:Category; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];

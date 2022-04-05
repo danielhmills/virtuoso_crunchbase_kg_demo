@@ -9,7 +9,7 @@
 @prefix scovo: <http://purl.org/NET/scovo#> .
 @prefix aowl: <http://bblfish.net/work/atom-owl/2006-06-06/> .
 
-<#TriplesMapacquisitions> a rr:TriplesMap; rr:logicalTable [ rr:sqlQuery """SELECT *, uuid as cb_uuid, FROM crunchbase.demo.acquisitions""" ]; 
+<#TriplesMapacquisitions> a rr:TriplesMap; rr:logicalTable [ rr:sqlQuery """SELECT *, uuid as cb_uuid FROM crunchbase.demo.acquisitions""" ]; 
 rr:subjectMap [ rr:termType rr:IRI  ; rr:template "https://demo.openlinksw.com/crunchbase/acquisition/{cb_uuid}#this"; rr:class cb:Acquisition; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMap [ rr:column "name" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasRank ] ; rr:objectMap [ rr:column "rank" ]; ] ;

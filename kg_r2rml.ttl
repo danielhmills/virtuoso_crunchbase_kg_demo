@@ -9,7 +9,7 @@
 @prefix aowl: <http://bblfish.net/work/atom-owl/2006-06-06/> .
 
 <#TriplesMapacquisitions> a rr:TriplesMap; rr:logicalTable [ rr:tableSchema "crunchbase" ; rr:tableOwner "demo" ; rr:tableName "acquisitions" ]; 
-rr:subjectMap [ rr:termType rr:IRI  ; rr:template "https://crunchbase.com/acquisition/{permalink}#this"; rr:class cb:Acquisition; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];
+rr:subjectMap [ rr:termType rr:IRI  ; rr:template "https://demo.openlinksw.com/crunchbase/acquisition/{permalink}#this"; rr:class cb:Acquisition; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMap [ rr:column "name" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasRank ] ; rr:objectMap [ rr:column "rank" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:createdAt ] ; rr:objectMap [ rr:column "created_at" ]; ] ;
@@ -26,7 +26,7 @@ rr:subjectMap [ rr:termType rr:IRI  ; rr:template "{acquirer_cb_url}#this"; rr:c
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasAcquisition] ; rr:objectMap [ rr:termType rr:IRI; rr:template "{acquiree_cb_url}" ]; ] .
 
 <#TriplesMapcategory_groups> a rr:TriplesMap; rr:logicalTable [ rr:tableSchema "crunchbase" ; rr:tableOwner "demo" ; rr:tableName "category_groups" ]; 
-rr:subjectMap [ rr:termType rr:IRI  ; rr:template "https://crunchbase.com/category/{permalink}#this"; rr:class cb:Category; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];
+rr:subjectMap [ rr:termType rr:IRI  ; rr:template "https://demo.openlinksw.com/crunchbase/category/{permalink}#this"; rr:class cb:Category; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:uuid ] ; rr:objectMap [ rr:column "uuid" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMap [ rr:column "name" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant owl:sameAs ] ; rr:objectMap [ rr:column "cb_url" ]; ] ;
@@ -36,7 +36,7 @@ rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:updatedAt ] ; rr:object
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasCategoryGroupsList ] ; rr:objectMap [ rr:termType rr:IRI; rr:template  "https://crunchbase.com/category_group/{category_groups_list}#this" ]; ] .
 
 <#TriplesMapdegrees> a rr:TriplesMap; rr:logicalTable [ rr:tableSchema "crunchbase" ; rr:tableOwner "demo" ; rr:tableName "degrees" ]; 
-rr:subjectMap [ rr:termType rr:IRI  ; rr:template "https://crunchbase.com/degree/{permalink}#this"; rr:class cb:Degree; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];
+rr:subjectMap [ rr:termType rr:IRI  ; rr:template "https://demo.openlinksw.com/crunchbase/degree/{permalink}#this"; rr:class cb:Degree; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMap [ rr:column "name" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasRank ] ; rr:objectMap [ rr:column "rank" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:createdAt ] ; rr:objectMap [ rr:column "created_at" ]; ] ;
@@ -57,7 +57,7 @@ rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMa
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasRank ] ; rr:objectMap [ rr:column "rank" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:createdAt ] ; rr:objectMap [ rr:column "created_at" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:updatedAt ] ; rr:objectMap [ rr:column "updated_at" ]; ] ;
-rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:ahsLegalName ] ; rr:objectMap [ rr:column "legal_name" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasLegalName ] ; rr:objectMap [ rr:column "legal_name" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasRoles ] ; rr:objectMap [ rr:column "roles" ]; ] ;
 #rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:domain ] ; rr:objectMap [ rr:column "domain" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:homepage_url ] ; rr:objectMap [ rr:termType rr:Literal; rr:column "homepage_url" ]; ] ;

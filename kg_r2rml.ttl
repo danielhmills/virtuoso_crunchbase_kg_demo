@@ -68,6 +68,34 @@ rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:degreeStartedOn ] ; 
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:degreeCompletedOn ] ; rr:objectMap [ rr:column "completed_on" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:degreIsCompleted ] ; rr:objectMap [ rr:column "is_completed" ]; ] .
 
+#Event_appearances.csv
+<#TriplesMapevent_appearances> a rr:TriplesMap; rr:logicalTable [ rr:sqlQuery """SELECT *, uuid as cb_uuid FROM crunchbase.demo.event_appearances""" ]; 
+rr:subjectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/crunchbase_demo/{type}/{cb_uuid}#this"; rr:class crunchbase:EventAppearance; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMap [ rr:column "name" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant schema:mainEntityOfPage ] ; rr:objectMap [ rr:column "cb_url" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant crunchbase:hasRank ] ; rr:objectMap [ rr:column "rank" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant crunchbase:createdAt ] ; rr:objectMap [ rr:column "created_at" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant crunchbase:updatedAt ] ; rr:objectMap [ rr:column "updated_at" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant crunchbase:ofEvent ] ; rr:objectMap [ rr:column "event_uuid" ]; ] ;
+#rr:predicateObjectMap [ rr:predicateMap [ rr:constant crunchbase:event_name ] ; rr:objectMap [ rr:column "event_name" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant crunchbase:participant_uuid ] ; rr:objectMap [ rr:column "participant_uuid" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant crunchbase:hasParticipant ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://demo.openlinksw.com/crunchbase_demo/{participant_type}/{participant_uuid}" ]; ] ;
+#rr:predicateObjectMap [ rr:predicateMap [ rr:constant crunchbase:participant_type ] ; rr:objectMap [ rr:column "participant_type" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant crunchbase:hasAppearanceType ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://www.openlinksw.com/schemas/crunchbase#{appearance_type}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:comment ] ; rr:objectMap [ rr:column "short_description" ]; ] .
+
+<#TriplesMapevent_appearances_attendee> a rr:TriplesMap; rr:logicalTable [ rr:sqlQuery """SELECT *, uuid as cb_uuid FROM crunchbase.demo.event_appearances""" ]; 
+rr:subjectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/crunchbase_demo/{participant_type}/{participant_uuid}#this"; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdf:type ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://www.openlinksw.com/schemas/crunchbase#{participant_type}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMap [ rr:column "participant_name" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasEventAppearance ] ; rr:objectMap [ rr:template "http://demo.openlinksw.com/crunchbase_demo/{type}/{cb_uuid}#this" ]; ] .
+
+<#TriplesMapevent_appearances_event> a rr:TriplesMap; rr:logicalTable [ rr:sqlQuery """SELECT *, uuid as cb_uuid FROM crunchbase.demo.event_appearances""" ]; 
+rr:subjectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/crunchbase_demo/{participant_type}/{event_uuid}#this"; rr:class cb:Event; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMap [ rr:column "event_name" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant cb:hasAppearances ] ; rr:objectMap [ rr:template "http://demo.openlinksw.com/crunchbase_demo/{type}/{cb_uuid}#this" ]; ] .
+
+
 #Organizations.csv
 <#TriplesMaporganizations> a rr:TriplesMap; rr:sqlQuery """SELECT *, uuid as cb_uuid FROM crunchbase.demo.organizations""" ]; 
 rr:subjectMap [ rr:termType rr:IRI  ; rr:template "{cb_url}#this"; rr:class oplcb:Organization; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];

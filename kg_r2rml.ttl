@@ -60,7 +60,7 @@ rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:createdAt ] ; rr:obj
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:updatedAt ] ; rr:objectMap [ rr:column "updated_at" ]; ] ;
 #rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:person_uuid ] ; rr:objectMap [ rr:column "person_uuid" ]; ] ;
 #rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:person_name ] ; rr:objectMap [ rr:column "person_name" ]; ] ;
-rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:fromInstitution ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "https://demo.openlinksw.com/crunchbase/degrees/{nstitution_uuid}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:fromInstitution ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "https://demo.openlinksw.com/crunchbase/degrees/{institution_uuid}" ]; ] ;
 #rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:institution_name ] ; rr:objectMap [ rr:column "institution_name" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:degree_type ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://www.openlinksw.com/schemas/crunchbase#{degree_type}" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:subject ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://www.openlinksw.com/schemas/crunchbase#{subject}" ]; ] ;

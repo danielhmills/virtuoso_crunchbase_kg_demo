@@ -129,7 +129,7 @@ rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasCountryCode ] ; r
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasStateCode ] ; rr:objectMap [ rr:column "state_code" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasRegion ] ; rr:objectMap [ rr:column "region" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasCity ] ; rr:objectMap [ rr:column "city" ]; ] ;
-rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasInvestmentType ] ; rr:objectMap [ rr:column "investment_type" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasInvestmentType ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://www.openlinksw.com/schemas/crunchbase#{investment_type}" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:announcedOn ] ; rr:objectMap [ rr:column "announced_on" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:raisedUSDAmount ] ; rr:objectMap [ rr:column "raised_amount_usd" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:raisedAmount ] ; rr:objectMap [ rr:column "raised_amount" ]; ] ;
@@ -143,7 +143,7 @@ rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasInvestorCount ] ;
 <#TriplesMapfunding_rounds> a rr:TriplesMap; rr:logicalTable [ rr:sqlQuery """SELECT *, uuid as cb_uuid FROM crunchbase.demo.funding_rounds""" ]; 
 rr:subjectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/crunchbase_demo/organization/{org_uuid}#this"; rr:class oplcb:Organization; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMap [ rr:column "org_name" ]; ] ;
-rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:hasFundingRound ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "https://demo.openlinkse.com/crunchbase_demo/{type}/{cb_uuid}" ]; ] .
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasFundingRound ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "https://demo.openlinkse.com/crunchbase_demo/{type}/{cb_uuid}" ]; ] .
 
 
 
@@ -197,4 +197,6 @@ rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasRank ] ; rr:objec
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:createdAt ] ; rr:objectMap [ rr:column "created_at" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:updatedAt ] ; rr:objectMap [ rr:column "updated_at" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:comment ] ; rr:objectMap [ rr:column "description" ]; ] .
+
+
 ### Turtle End ###

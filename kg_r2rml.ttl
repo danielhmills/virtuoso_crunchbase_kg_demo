@@ -137,7 +137,7 @@ rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasTotalExits ] ; rr
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasRevenueRange ] ; rr:objectMap [ rr:column "revenue_range" ]; ] .
 
 #Organization_descriptions.csv
-<#TriplesMaporganization_descriptions> a rr:TriplesMap; rr:logicalTable [ rr:sqlQuery """SELECT *, uuid as cb_uuid FROM crunchbase.demo.organizations""" ]; 
+<#TriplesMaporganization_descriptions> a rr:TriplesMap; rr:logicalTable [ rr:sqlQuery """SELECT *, uuid as cb_uuid FROM crunchbase.demo.organization_descriptions""" ]; 
 rr:subjectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/crunchbase_demo/{type}/{cb_uuid}#this"; rr:class oplcb:organization_descriptions; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMap [ rr:column "name" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant schema:mainEntityOfPage ] ; rr:objectMap [ rr:column "cb_url" ]; ] ;

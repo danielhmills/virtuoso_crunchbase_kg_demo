@@ -95,9 +95,8 @@ rr:subjectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/cr
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMap [ rr:column "event_name" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasAppearances ] ; rr:objectMap [ rr:template "http://demo.openlinksw.com/crunchbase_demo/{type}/{cb_uuid}#this" ]; ] .
 
-
 #Organizations.csv
-<#TriplesMaporganizations> a rr:TriplesMap; rr:sqlQuery """SELECT *, uuid as cb_uuid FROM crunchbase.demo.organizations""" ]; 
+<#TriplesMaporganizations> a rr:TriplesMap; rr:logicalTable [ rr:sqlQuery """SELECT *, uuid as cb_uuid FROM crunchbase.demo.organizations""" ]; 
 rr:subjectMap [ rr:termType rr:IRI  ; rr:template "{cb_url}#this"; rr:class oplcb:Organization; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMap [ rr:column "name" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasRank ] ; rr:objectMap [ rr:column "rank" ]; ] ;

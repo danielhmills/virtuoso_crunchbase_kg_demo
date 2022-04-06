@@ -117,6 +117,36 @@ rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasCity ] ; rr:objec
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant schema:logo] ; rr:objectMap [ rr:termType rr:IRI; rr:template "{logo_url}" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasEventRoles ] ; rr:objectMap [ rr:column "event_roles" ]; ] .
 
+#funding_rounds.csv
+<#TriplesMapfunding_rounds> a rr:TriplesMap; rr:logicalTable [ rr:sqlQuery """SELECT *, uuid as cb_uuid FROM crunchbase.demo.funding_rounds""" ]; 
+rr:subjectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/crunchbase_demo/{type}/{cb_uuid}#this"; rr:class oplcb:FundingRound; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMap [ rr:column "name" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant schema:mainEntityOfPage ] ; rr:objectMap [ rr:column "cb_url" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasRank ] ; rr:objectMap [ rr:column "rank" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:createdAt ] ; rr:objectMap [ rr:column "created_at" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:updatedAt ] ; rr:objectMap [ rr:column "updated_at" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasCountryCode ] ; rr:objectMap [ rr:column "country_code" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasStateCode ] ; rr:objectMap [ rr:column "state_code" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasRegion ] ; rr:objectMap [ rr:column "region" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasCity ] ; rr:objectMap [ rr:column "city" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasInvestmentType ] ; rr:objectMap [ rr:column "investment_type" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:announcedOn ] ; rr:objectMap [ rr:column "announced_on" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:raisedUSDAmount ] ; rr:objectMap [ rr:column "raised_amount_usd" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:raisedAmount ] ; rr:objectMap [ rr:column "raised_amount" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:raisedAmountCurrencyCode ] ; rr:objectMap [ rr:column "raised_amount_currency_code" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasPostMoneyValuationUSD ] ; rr:objectMap [ rr:column "post_money_valuation_usd" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:postMoneyValuation ] ; rr:objectMap [ rr:column "post_money_valuation" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:postMoneyValuationCurrencyCode ] ; rr:objectMap [ rr:column "post_money_valuation_currency_code" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasInvestorCount ] ; rr:objectMap [ rr:column "investor_count" ]; ] .
+#rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasLeadInvestor ] ; rr:objectMap [ rr:column "https://demo.openlinksw.com/crunchbase_demo/investor/{lead_investor_uuids}" ]; ] .
+
+<#TriplesMapfunding_rounds> a rr:TriplesMap; rr:logicalTable [ rr:sqlQuery """SELECT *, uuid as cb_uuid FROM crunchbase.demo.funding_rounds""" ]; 
+rr:subjectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/crunchbase_demo/organization/{org_uuid}#this"; rr:class oplcb:Organization; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMap [ rr:column "org_name" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:hasFundingRound ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "https://demo.openlinkse.com/crunchbase_demo/{type}/{cb_uuid}" ]; ] .
+
+
+
 #Organizations.csv
 <#TriplesMaporganizations> a rr:TriplesMap; rr:logicalTable [ rr:sqlQuery """SELECT *, uuid as cb_uuid FROM crunchbase.demo.organizations""" ]; 
 rr:subjectMap [ rr:termType rr:IRI  ; rr:template "{cb_url}#this"; rr:class oplcb:Organization; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];

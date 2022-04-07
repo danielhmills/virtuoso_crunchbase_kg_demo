@@ -345,6 +345,49 @@ rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasCurrentJob ] ; rr
 rr:subjectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/crunchbase_demo/person/{org_uuid}#this"; rr:class oplcb:Organization; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMap [ rr:column "org_name" ]; ] .
 
+#people.csv
+<#TriplesMappeople> a rr:TriplesMap; rr:logicalTable [ rr:sqlQuery """SELECT *, uuid AS cb_uuid FROM crunchbase.demo.people""" ]; 
+rr:subjectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/crunchbase_demo/{type}/{cb_uuid}#this"; rr:class oplcb:Person; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMap [ rr:column "name" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant schema:mainEntityOfPage ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "cb_url" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasRank ] ; rr:objectMap [ rr:column "rank" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:createdAt ] ; rr:objectMap [ rr:column "created_at" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:updatedAt ] ; rr:objectMap [ rr:column "updated_at" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasFirstName ] ; rr:objectMap [ rr:column "first_name" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasLastName ] ; rr:objectMap [ rr:column "last_name" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasName ] ; rr:objectMap [ rr:template "{first_name} {last_name}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasGender ] ; rr:objectMap [ rr:column "gender" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hascountry_code ] ; rr:objectMap [ rr:column "country_code" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasStateCode ] ; rr:objectMap [ rr:column "state_code" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasRegion ] ; rr:objectMap [ rr:column "region" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasCity ] ; rr:objectMap [ rr:column "city" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasFeaturedJob] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://demo.openlinksw.com/crunchbase_demo/organization/{featured_job_organization_name}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:featured_job_organization_name ] ; rr:objectMap [ rr:column "featured_job_organization_name" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasFacebookURL ] ; rr:objectMap [ rr:column "facebook_url" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasLinkedinURL ] ; rr:objectMap [ rr:column "linkedin_url" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasTwitterURL ] ; rr:objectMap [ rr:column "twitter_url" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant schema:logo ] ; rr:objectMap [ rr:column "logo_url" ]; ] .
+
+<#TriplesMappeople_job> a rr:TriplesMap; rr:logicalTable [ rr:sqlQuery """SELECT *, uuid AS cb_uuid FROM crunchbase.demo.people""" ]; 
+rr:subjectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/crunchbase_demo/job/{cb_uuid}#job"; rr:class oplcb:Job; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasJobOrganization ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://demo.openlinksw.com/crunchbase_demo/organization/{featured_job_organization_uuid}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasJobTitle ] ; rr:objectMap [ rr:column "featured_job_title" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMap [ rr:template "{featured_job_title} @ {featured_job_organization_name}" ]; ] .
+
+<#TriplesMappeople_job_organization> a rr:TriplesMap; rr:logicalTable [ rr:sqlQuery """SELECT *, uuid AS cb_uuid FROM crunchbase.demo.people""" ]; 
+rr:subjectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/crunchbase_demo/organization/{featured_job_organization_uuid}#this"; rr:class oplcb:Organization; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMap [ rr:column "featured_job_organization_name" ]; ] .
+
+#people_description.csv
+<#TriplesMappeople_descriptions> a rr:TriplesMap; rr:logicalTable [ rr:sqlQuery """SELECT *, uuid AS cb_uuid FROM crunchbase.demo.people_descriptions""" ]; 
+rr:subjectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/crunchbase_demo/{type}/{cb_uuid}#this"; rr:class oplcb:Person; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMap [ rr:column "name" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:permalink ] ; rr:objectMap [ rr:column "permalink" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant schema:mainEntityOfPage ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "cb_url" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasRank ] ; rr:objectMap [ rr:column "rank" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:createdAt ] ; rr:objectMap [ rr:column "created_at" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:updatedAt ] ; rr:objectMap [ rr:column "updated_at" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:comment ] ; rr:objectMap [ rr:column "description" ]; ] .
 
 #Organization_descriptions.csv
 <#TriplesMaporganization_descriptions> a rr:TriplesMap; rr:logicalTable [ rr:sqlQuery """SELECT *, uuid as cb_uuid FROM crunchbase.demo.organization_descriptions""" ]; 

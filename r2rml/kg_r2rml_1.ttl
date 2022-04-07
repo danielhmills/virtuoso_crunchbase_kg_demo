@@ -181,7 +181,7 @@ rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:investor_uuid ] ; rr
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:partner_uuid ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://demo.openlinksw.com/crunchbase_demo/people/{partner_uuid}#this" ]; ] .
 
 <#TriplesMapinvestment_partners_funding_round> a rr:TriplesMap; rr:logicalTable [ rr:sqlQuery """SELECT *, uuid as cb_uuid FROM crunchbase.demo.investment_partners""" ]; 
-rr:subjectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/crunchbase_demo/funding_round/{funding_round_uuid}#this"; rr:class oplcb:FuncdingRound; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];
+rr:subjectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/crunchbase_demo/funding_round/{funding_round_uuid}#this"; rr:class oplcb:FundingRound; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMap [ rr:column "funding_round_name" ]; ] .
 
 <#TriplesMapinvestment_partners_investor> a rr:TriplesMap; rr:logicalTable [ rr:sqlQuery """SELECT *, uuid as cb_uuid FROM crunchbase.demo.investment_partners""" ]; 

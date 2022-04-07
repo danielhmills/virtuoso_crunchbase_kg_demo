@@ -297,7 +297,7 @@ rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasRank ] ; rr:objec
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:createdAt ] ; rr:objectMap [ rr:column "created_at" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:updatedAt ] ; rr:objectMap [ rr:column "updated_at" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasIPOOrganization ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://demo.openlinksw.com/crunchbase_demo/organization/{org_uuid}#this" ]; ] ;
-rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:wentPubliOn ] ; rr:objectMap [ rr:column "went_public_on" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:wentPublicOn ] ; rr:objectMap [ rr:column "went_public_on" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasSharePriceUsd ] ; rr:objectMap [ rr:column "share_price_usd" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasSharePrice ] ; rr:objectMap [ rr:column "share_price" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasSharePriceCurrencyCode ] ; rr:objectMap [ rr:column "share_price_currency_code" ]; ] ;

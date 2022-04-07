@@ -324,7 +324,7 @@ rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasIPO ] ; rr:object
 #jobs.csv
 <#TriplesMapjobs> a rr:TriplesMap; rr:logicalTable [ rr:sqlQuery """select *, uuid AS cb_uuid, CASE WHEN is_current = 'True' THEN uuid END current_job_uuid  FROM crunchbase.demo.jobs""" ]; 
 rr:subjectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/crunchbase_demo/{type}/{cb_uuid}#this"; rr:class oplcb:Job; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];
-rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMap [ rr:template "{title} @ {org_name}]" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMap [ rr:template "{title} @ {org_name}" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant schema:mainEntityOfPage ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "cb_url" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasRank ] ; rr:objectMap [ rr:column "rank" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:createdAt ] ; rr:objectMap [ rr:column "created_at" ]; ] ;

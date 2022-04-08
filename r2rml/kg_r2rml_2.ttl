@@ -118,7 +118,7 @@ rr:predicateObjectMap [ rr:predicateMap [ rr:constant schema:mainEntityOfPage ] 
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasRank ] ; rr:objectMap [ rr:column "rank" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:createdAt ] ; rr:objectMap [ rr:column "created_at" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:updatedAt ] ; rr:objectMap [ rr:column "updated_at" ]; ] ;
-rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasJobOrganization] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://www.openlinksw.com/schemas/crunchbase#{org_uuid}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasJobOrganization] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://www.openlinksw.com/organization/{org_uuid}#this" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:startedOn ] ; rr:objectMap [ rr:column "started_on" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:endedOn ] ; rr:objectMap [ rr:column "ended_on" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:jobTitle ] ; rr:objectMap [ rr:column "title" ]; ] ;

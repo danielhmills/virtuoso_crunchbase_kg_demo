@@ -94,9 +94,9 @@ rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMa
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasEventAppearance ] ; rr:objectMap [ rr:template "http://demo.openlinksw.com/crunchbase_demo/{type}/{cb_uuid}#this" ]; ] .
 
 <#TriplesMapevent_appearances_event> a rr:TriplesMap; rr:logicalTable [ rr:sqlQuery """SELECT *, uuid as cb_uuid FROM crunchbase.demo.event_appearances""" ]; 
-rr:subjectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/crunchbase_demo/{participant_type}/{event_uuid}#this"; rr:class oplcb:Event; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];
+rr:subjectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/crunchbase_demo/event/{event_uuid}#this"; rr:class oplcb:Event; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMap [ rr:column "event_name" ]; ] ;
-rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasAppearances ] ; rr:objectMap [ rr:template "http://demo.openlinksw.com/crunchbase_demo/{type}/{cb_uuid}#this" ]; ] .
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasEventAppearance ] ; rr:objectMap [ rr:template "http://demo.openlinksw.com/crunchbase_demo/{type}/{cb_uuid}#this" ]; ] .
 
 #Events.csv
 <#TriplesMapevents> a rr:TriplesMap; rr:logicalTable [ rr:sqlQuery """SELECT *, uuid as cb_uuid FROM crunchbase.demo.events""" ]; 

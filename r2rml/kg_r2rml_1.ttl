@@ -189,7 +189,7 @@ rr:subjectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/cr
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMap [ rr:column "investor_name" ]; ] .
 
 <#TriplesMapinvestment_partners_people> a rr:TriplesMap; rr:logicalTable [ rr:sqlQuery """SELECT *, uuid as cb_uuid FROM crunchbase.demo.investment_partners""" ]; 
-rr:subjectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/crunchbase_demo/funding_round/{partner_uuid}#this"; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];
+rr:subjectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/crunchbase_demo/funding_round/{partner_uuid}#this"; rr:class oplcb:Person; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMap [ rr:column "partner_name" ]; ] .
 
 ###Turtle End###

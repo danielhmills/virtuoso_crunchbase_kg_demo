@@ -137,7 +137,7 @@ rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMa
 
 #Organization_descriptions.csv
 <#TriplesMaporganization_descriptions> a rr:TriplesMap; rr:logicalTable [ rr:sqlQuery """SELECT *, uuid as cb_uuid FROM crunchbase.demo.organization_descriptions""" ]; 
-rr:subjectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/crunchbase_demo/{type}/{cb_uuid}#this"; rr:class oplcb:organization_descriptions; rr:graph <http://demo.openlinksw.com/crunchbase_demo2#> ];
+rr:subjectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/crunchbase_demo/{type}/{cb_uuid}#this"; rr:class oplcb:OrganizationDescription; rr:graph <http://demo.openlinksw.com/crunchbase_demo2#> ];
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMap [ rr:column "name" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant schema:mainEntityOfPage ] ; rr:objectMap [ rr:column "cb_url" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasRank ] ; rr:objectMap [ rr:column "rank" ]; ] ;
@@ -146,7 +146,7 @@ rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:updatedAt ] ; rr:obj
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:comment ] ; rr:objectMap [ rr:column "description" ]; ] .
 
 #Organizations.csv
-<#TriplesMaporganizations> a rr:TriplesMap; rr:logicalTable [ rr:sqlQuery """SELECT *, uuid as cb_uuid, INITCAP(status) as status_class FROM crunchbase.demo.organizations""" ]; 
+<#TriplesMaporganizations> a rr:TriplesMap; rr:logicalTable [ rr:sqlQuery """SELECT *, uuid as cb_uuid, INITCAP(status) as status_class, INITCAP(primary_role) as primary_role_class FROM crunchbase.demo.organizations""" ]; 
 rr:subjectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/crunchbase_demo/organization{cb_uuid}#this"; rr:class oplcb:Organization; rr:graph <http://demo.openlinksw.com/crunchbase_demo2#> ];
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMap [ rr:column "name" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasRank ] ; rr:objectMap [ rr:column "rank" ]; ] ;
@@ -182,7 +182,7 @@ rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:logo_url ] ; rr:obje
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasAlias ] ; rr:objectMap [ rr:column "alias1" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasAlias ] ; rr:objectMap [ rr:column "alias2" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasAlias ] ; rr:objectMap [ rr:column "alias3" ]; ] ;
-rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdf:type ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://www.openlinksw.com/schemas/crunchbase#{primary_role}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdf:type ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://www.openlinksw.com/schemas/crunchbase#{primary_role_class}" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasTotalExits ] ; rr:objectMap [ rr:column "num_exits" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasRevenueRange ] ; rr:objectMap [ rr:column "revenue_range" ]; ] .
 

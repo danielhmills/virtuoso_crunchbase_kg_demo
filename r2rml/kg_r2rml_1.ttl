@@ -84,9 +84,9 @@ rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasParticipant ] ; r
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasAppearanceType ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://www.openlinksw.com/schemas/crunchbase#{appearance_type_class}" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:comment ] ; rr:objectMap [ rr:column "short_description" ]; ] .
 
-<#TriplesMapevent_appearances_attendee> a rr:TriplesMap; rr:logicalTable [ rr:sqlQuery """SELECT *, uuid as cb_uuid FROM crunchbase.demo.event_appearances""" ]; 
+<#TriplesMapevent_appearances_attendee> a rr:TriplesMap; rr:logicalTable [ rr:sqlQuery """SELECT *, uuid as cb_uuid, INITCAP(participant_type) as participant_class FROM crunchbase.demo.event_appearances""" ]; 
 rr:subjectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/crunchbase_demo/{participant_type}/{participant_uuid}#this"; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];
-rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdf:type ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://www.openlinksw.com/schemas/crunchbase#{participant_type}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdf:type ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://www.openlinksw.com/schemas/crunchbase#{participant_class}" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMap [ rr:column "participant_name" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasEventAppearance ] ; rr:objectMap [ rr:template "http://demo.openlinksw.com/crunchbase_demo/{type}/{cb_uuid}#this" ]; ] .
 

@@ -38,7 +38,7 @@ rr:predicateObjectMap [ rr:predicateMap [ rr:constant schema:mainEntityOfPage ] 
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasRank ] ; rr:objectMap [ rr:column "rank" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:createdAt ] ; rr:objectMap [ rr:column "created_at" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:updatedAt ] ; rr:objectMap [ rr:column "updated_at" ]; ] ;
-rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasFundingRound ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "hhtp://demo.openlinksw.com/crunchbase_demo/funding_round/{funding_round_uuid}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasFundingRound ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://demo.openlinksw.com/crunchbase_demo/funding_round/{funding_round_uuid}" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasInvestor ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://demo.openliniksw.com/crunchbase_demo/{investor_type}/{investor_uuid}" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasLeadInvestor ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://demo.openliniksw.com/crunchbase_demo/{investor_type}/{lead_investor_uuid}" ]; ] .
 

@@ -165,9 +165,9 @@ rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasRaisedAmount ] ; 
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasRaisedAmountCurrencyCode ] ; rr:objectMap [ rr:column "raised_amount_currency_code" ]; ] .
 
 
-<#TriplesMapfunds_organization> a rr:TriplesMap; rr:logicalTable [ rr:sqlQuery """SELECT *, uuid as cb_uuid FROM crunchbase.demo.funds""" ]; 
+<#TriplesMapfunds_organization> a rr:TriplesMap; rr:logicalTable [ rr:sqlQuery """SELECT *, uuid as cb_uuid, INITCAP(entity_type) as entity_class FROM crunchbase.demo.funds""" ]; 
 rr:subjectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/crunchbase_demo/{entity_type}/{entity_uuid}#this"; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];
-rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdf:type ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://www.openlinksw.com/schemas/crunchbase#{entity_type}" ]; ] ; 
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdf:type ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://www.openlinksw.com/schemas/crunchbase#{entity_class}" ]; ] ; 
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMap [ rr:column "entity_name" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasFund ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://demo.openlinksw.com/crunchbase_demo/{type}/{cb_uuid}#this" ]; ] .
 

@@ -175,7 +175,7 @@ rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasFund ] ; rr:objec
 <#TriplesMapinvestment_partners> a rr:TriplesMap; rr:logicalTable [ rr:sqlQuery """SELECT *, uuid as cb_uuid FROM crunchbase.demo.investment_partners""" ]; 
 rr:subjectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/crunchbase_demo/{type}/{uuid}#this"; rr:class oplcb:Investment; rr:graph <http://demo.openlinksw.com/crunchbase_demo#> ];
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMap [ rr:column "name" ]; ] ;
-rr:predicateObjectMap [ rr:predicateMap [ rr:constant schema:mainEntityOfPage ] ; rr:objectMap [ rr:termType rr:IRI; rr:column "cb_url" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant schema:mainEntityOfPage ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "https://www.crunchbase.com/{type}/{permalink}" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:hasRank ] ; rr:objectMap [ rr:column "rank" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:createdAt ] ; rr:objectMap [ rr:column "created_at" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant oplcb:updatedAt ] ; rr:objectMap [ rr:column "updated_at" ]; ] ;
